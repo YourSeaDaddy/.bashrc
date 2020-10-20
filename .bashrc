@@ -47,6 +47,9 @@ alias la='ls -a'
 alias ll='ls -la'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+
+
+
 #Custom
 alias update='sudo pacman -Syu'
 alias pmount-list='nano /etc/pmount.allow'
@@ -54,6 +57,7 @@ alias r='ranger'
 alias e='exit'
 alias pacman='sudo pacman'
 alias chmod='sudo chmod'
+alias chown='sudo chown'
 alias nano='sudo nano'
 alias speedtest='./librespeed-cli'
 alias sdn='sudo shutdown -h now'
@@ -69,7 +73,9 @@ alias fw='sudo ufw status numbered'
 alias uz='aunpack'
 alias test='ping 1.1.1.1'
 alias ipv6='sudo nano /etc/sysctl.d/40-ipv6.conf'
-
+alias gpu='optimus-manager --status'
+alias calen='calcurse'
+alias s='sensors'
 
 
 
