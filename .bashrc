@@ -50,6 +50,7 @@ alias l.="ls -A | egrep '^\.'"
 
 
 
+
 #Custom
 alias update='sudo pacman -Syu'
 alias pmount-list='nano /etc/pmount.allow'
@@ -59,25 +60,34 @@ alias pacman='sudo pacman'
 alias chmod='sudo chmod'
 alias chown='sudo chown'
 alias nano='sudo nano'
-alias speedtest='./librespeed-cli'
+#alias speedtest='./librespeed-cli'
 alias sdn='sudo shutdown -h now'
-alias weather='curl wttr.in/78240'
+alias sr="sudo reboot"
+alias weather='curl wttr.in/78251'
 alias search='sudo pacman -Ss'
-alias remove='sudo pacman -Rs'
+alias remove='sudo pacman -R '
 alias depend='sudo pacman -Qi'
 alias install='sudo pacman -S'
 alias config='nano .config/i3/config'
+alias i3bar='nano .i3status.conf'
 alias umount='sudo umount'
 alias email='neomutt'
 alias fw='sudo ufw status numbered'
+alias mkdir='sudo mkdir'
 alias uz='aunpack'
-alias test='ping 1.1.1.1'
+alias test='ping 9.9.9.9'
 alias ipv6='sudo nano /etc/sysctl.d/40-ipv6.conf'
 alias gpu='optimus-manager --status'
 alias calen='calcurse'
 alias s='sensors'
-
-
+alias cpu='cd /sys/devices/platform/coretemp.0/hwmon && ls && cd'
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias fwf='sudo ufw disable'
+alias fwn='sudo ufw enable'
+alias speed='speedtest'
+alias vmfix='sudo modprobe -a vmw_vmci vmmon vmnet'
+alias vmnetwork='sudo systemctl start vmware-networks.service''
+'
 
 
 
@@ -85,7 +95,7 @@ alias s='sensors'
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
-alias udpate='sudo pacman -Syyu'
+alias udpate='sudo pacman -Syu'
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -119,46 +129,10 @@ alias merge="xrdb -merge ~/.Xresources"
 # Aliases for software managment
 # pacman or pm
 alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syyu'
-alias instsall='sudo pacman -S'
-
-# yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
-alias upall="yay -Syu --noconfirm"
-
-#ps
-alias psa="ps auxf"
-alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
-
-#grub update
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
-#add new fonts
-alias update-fc='sudo fc-cache -fv'
-
-#copy/paste all content of /etc/skel over to home folder - backup of config created - beware
-alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
-#backup contents of /etc/skel to hidden backup folder in home/user
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
-
-#copy bashrc-latest over on bashrc - cb= copy bashrc
-alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
-#copy /etc/skel/.zshrc over on ~/.zshrc - cb= copy zshrc
-#alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && source ~/.zshrc'
-
-#switch between bash and zsh
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-
-#quickly kill conkies
-alias kc='killall conky'
-
-#hardware info --short
-alias hw="hwinfo --short"
 
 #skip integrity check
 alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
+
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -168,9 +142,6 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
-#mounting the folder Public for exchange between host and guest on virtualbox
-alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 
 #shopt
 shopt -s autocd # change to named directory
@@ -220,9 +191,6 @@ alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 #receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
-#shutdown or reboot
-alias ssn="sudo shutdown now"
-alias sr="sudo reboot"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
