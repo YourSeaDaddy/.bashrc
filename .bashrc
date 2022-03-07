@@ -71,7 +71,7 @@ alias install='sudo pacman -S'
 alias config='nano .config/i3/config'
 alias i3bar='nano .i3status.conf'
 alias umount='sudo umount'
-alias email='neomutt'
+#alias email='neomutt'
 alias fw='sudo ufw status numbered'
 alias mkdir='sudo mkdir'
 alias uz='aunpack'
@@ -86,8 +86,26 @@ alias fwf='sudo ufw disable'
 alias fwn='sudo ufw enable'
 alias speed='speedtest'
 alias vmfix='sudo modprobe -a vmw_vmci vmmon vmnet'
-alias vmnetwork='sudo systemctl start vmware-networks.service''
-'
+alias vmnetwork='sudo systemctl start vmware-networks.service'
+alias neo='neofetch --w3m ~/Downloads/Icons/mrtowley.png'
+alias systemctl='sudo systemctl'
+alias suspend='sudo systemctl suspend'
+alias mac='sudo ifconfig wlp0s20f3 down && sudo macchanger -r wlp0s20f3 && sudo ifconfig wlp0s20f3 up'
+alias macshow='macchanger wlp0s20f3 -s'
+alias hib='sudo systemctl hibernate'
+alias ip='curl icanhazip.com'
+alias cache='sudo paccache -r'
+alias tailscale='sudo tailscale up --shields-up --accept-dns=false --accept-routes'
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,4 +246,5 @@ ex ()
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
 
