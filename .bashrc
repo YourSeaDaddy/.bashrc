@@ -65,7 +65,7 @@ alias sdn='sudo shutdown -h now'
 alias sr="sudo reboot"
 alias weather='curl wttr.in/78251'
 alias search='sudo pacman -Ss'
-alias remove='sudo pacman -R '
+alias remove='sudo pacman -Rns '
 alias depend='sudo pacman -Qi'
 alias install='sudo pacman -S'
 alias config='nano .config/i3/config'
@@ -75,7 +75,7 @@ alias umount='sudo umount'
 alias fw='sudo ufw status numbered'
 alias mkdir='sudo mkdir'
 alias uz='aunpack'
-alias test='ping 9.9.9.9'
+alias test='ping -c2 9.9.9.9'
 alias ipv6='sudo nano /etc/sysctl.d/40-ipv6.conf'
 alias gpu='optimus-manager --status'
 alias calen='calcurse'
@@ -96,6 +96,35 @@ alias hib='sudo systemctl hibernate'
 alias ip='curl icanhazip.com'
 alias cache='sudo paccache -r'
 alias tailscale='sudo tailscale up --shields-up --accept-dns=false --accept-routes'
+alias coffee='xset s off -dpms'
+alias nwr='sudo systemctl restart NetworkManager'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -246,5 +275,3 @@ ex ()
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-
