@@ -52,60 +52,80 @@ alias l.="ls -A | egrep '^\.'"
 
 
 #Custom
+#
+#
+#
+#
+
+#Pacman
 alias update='sudo pacman -Syu'
-alias pmount-list='nano /etc/pmount.allow'
+alias yupdate='yay -Syu'
+alias cache='sudo paccache -r'
+
+#Obvio
 alias r='ranger'
 alias e='exit'
 alias pacman='sudo pacman'
-alias chmod='sudo chmod'
-alias chown='sudo chown'
-alias nano='sudo nano'
-#alias speedtest='./librespeed-cli'
-alias sdn='sudo shutdown -h now'
-alias sr="sudo reboot"
-alias weather='curl wttr.in/78251'
 alias search='sudo pacman -Ss'
 alias remove='sudo pacman -Rns '
 alias depend='sudo pacman -Qi'
 alias install='sudo pacman -S'
+alias chmod='sudo chmod'
+alias chown='sudo chown'
+alias mkdir='sudo mkdir'
+alias nano='sudo nano'
+alias systemctl='sudo systemctl'
+
+#Power Management
+alias sdn='sudo shutdown -h now'
+alias sr="sudo reboot"
+alias hib='sudo systemctl hibernate'
+alias suspend='sudo systemctl suspend'
+alias coffee='xset s off -dpms'
+
+#Configs
 alias config='nano .config/i3/config'
 alias i3bar='nano .i3status.conf'
-alias umount='sudo umount'
-#alias email='neomutt'
-alias fw='sudo ufw status numbered'
-alias mkdir='sudo mkdir'
-alias uz='aunpack'
-alias test='ping -c2 9.9.9.9'
 alias ipv6='sudo nano /etc/sysctl.d/40-ipv6.conf'
-alias gpu='optimus-manager --status'
-alias calen='calcurse'
-alias s='sensors'
-alias cpu='cd /sys/devices/platform/coretemp.0/hwmon && ls && cd'
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias display='sudo nano .Xresources'
+
+
+alias umount='sudo umount'
+alias pmount-list='nano /etc/pmount.allow'
+alias uz='aunpack'
+
+#Network
+alias fw='sudo ufw status numbered'
 alias fwf='sudo ufw disable'
 alias fwn='sudo ufw enable'
+alias test='ping -c2 9.9.9.9'
+alias nwr='sudo systemctl restart NetworkManager'
+alias ip='curl icanhazip.com'
 alias speed='speedtest'
 alias vmfix='sudo modprobe -a vmw_vmci vmmon vmnet'
 alias vmnetwork='sudo systemctl start vmware-networks.service'
-alias neo='neofetch --w3m ~/Downloads/Icons/mrtowley.png'
-alias systemctl='sudo systemctl'
-alias suspend='sudo systemctl suspend'
 alias mac='sudo ifconfig wlp0s20f3 down && sudo macchanger -r wlp0s20f3 && sudo ifconfig wlp0s20f3 up'
 alias macshow='macchanger wlp0s20f3 -s'
-alias hib='sudo systemctl hibernate'
-alias ip='curl icanhazip.com'
-alias cache='sudo paccache -r'
 alias tailscale='sudo tailscale up --shields-up --accept-dns=false --accept-routes'
-alias coffee='xset s off -dpms'
-alias nwr='sudo systemctl restart NetworkManager'
+
+#Sensors
+alias gpu='optimus-manager --status'
+alias cpu='cd /sys/devices/platform/coretemp.0/hwmon && ls && cd'
+alias s='sensors | grep Core && sensors | grep fan'
+
+#Random
+alias calen='calcurse'
+alias neo='neofetch --w3m ~/Downloads/Icons/mrtowley.png'
+alias weather='curl wttr.in/78251'
+alias space='df -hT'
+alias clock='tty-clock -xct -C4'
+alias birth='stat -c %w /'
 
 
-
-
-
-
-
-
+#No Use
+#alias speedtest='./librespeed-cli'
+#alias email='neomutt'
 
 
 
