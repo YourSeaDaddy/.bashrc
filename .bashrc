@@ -47,7 +47,7 @@ alias la='ls -a'
 alias ll='ls -la'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
-
+alias back='cd..'
 
 
 
@@ -58,6 +58,7 @@ alias l.="ls -A | egrep '^\.'"
 #
 
 #Pacman
+#alias update='sudo ./update.sh'
 alias update='sudo pacman -Syu'
 alias yupdate='yay -Syu'
 alias cache='sudo paccache -r'
@@ -107,8 +108,10 @@ alias vmfix='sudo modprobe -a vmw_vmci vmmon vmnet'
 alias vmnetwork='sudo systemctl start vmware-networks.service'
 alias mac='sudo ifconfig wlp0s20f3 down && sudo macchanger -r wlp0s20f3 && sudo ifconfig wlp0s20f3 up'
 alias macshow='macchanger wlp0s20f3 -s'
-alias tailscale='sudo tailscale up --shields-up --accept-dns=false --accept-routes'
-
+alias tailscale='sudo systemctl start tailscaled && sudo tailscale up --shields-up --accept-dns=false --accept-routes'
+alias clients='sudo tailscale status'
+alias dev='ssh root@172.31.125.4'
+alias wifi='nmtui'
 #Sensors
 alias gpu='optimus-manager --status'
 alias cpu='cd /sys/devices/platform/coretemp.0/hwmon && ls && cd'
@@ -121,12 +124,13 @@ alias weather='curl wttr.in/78251'
 alias space='df -hT'
 alias clock='tty-clock -xct -C4'
 alias birth='stat -c %w /'
-
-
+alias name='uname -r'
+alias logout='figlet See you space cowboy | lolcat'
+alias dont='espeak -s 150 -v en+f2 "dont worry about it"'
 #No Use
 #alias speedtest='./librespeed-cli'
 #alias email='neomutt'
-
+alias spotify='cd /usr/share/applications && gtk-launch spotify-adblock.desktop && cd'
 
 
 
@@ -295,3 +299,5 @@ ex ()
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+bind -s 'set completion-ignore-case on'
